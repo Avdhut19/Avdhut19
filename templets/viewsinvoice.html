@@ -1,0 +1,31 @@
+{% block content %}
+
+<table class="table table-bordered border-primary" id="invoicerow">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Email</th>
+            <th scope="col">invoice_date</th>
+            <th scope="col">address</th>
+            <th scope="col">address2</th>
+            <th scope="col">city</th>
+            <th scope="col">delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in invoice1 %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <th>{{i.Email}}</th>
+            <th>{{i.Invoice_date}}</th>
+            <th>{{i.Address}}</th>
+            <th>{{i.Address2}}</th>
+            <th>{{i.City}}</th>
+            <td><a class="btn btn-primary" href="{% url 'deletinvoivce' i.id %}">delete</a></td>
+
+
+        </tr>
+        {% endfor%}
+    </tbody>
+</table>
+{% endblock content %}
